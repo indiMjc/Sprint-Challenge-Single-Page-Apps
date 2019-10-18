@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function SearchForm(props) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +20,7 @@ export default function SearchForm(props) {
   return (
     <>
       <form>
-        <label>Search string:</label>
+        <label>Search characters:</label>
         <input
           id="name"
           type="text"
@@ -32,7 +33,9 @@ export default function SearchForm(props) {
       <div className="results">
         <ul>
           {searchResults.map(character => (
-            <li key={character.name}>{character.name}</li>
+            <Link key={character.name} to={`/characters/${character.name}`}>
+              <li key={character.name}>{character.name}</li>
+            </Link>
           ))}
         </ul>
       </div>
