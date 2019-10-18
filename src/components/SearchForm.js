@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export default function SearchForm(props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  // console.log("search props", props.characters);
 
   useEffect(() => {
     const results = props.characters.filter(character =>
