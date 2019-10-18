@@ -15,7 +15,6 @@ export default function CharacterList() {
     axios
       .get(`https://rickandmortyapi.com/api/character/`)
       .then(res => {
-        // console.log(res.data.info.next);
         setCharacters(res.data.results);
         setNext(res.data.info.next);
       })
@@ -26,8 +25,8 @@ export default function CharacterList() {
 
   return (
     <>
+      <SearchForm characters={characters} />
       <div className="top">
-        <SearchForm characters={characters} />
         <PreviousButton
           setNext={setNext}
           setCharacters={setCharacters}
